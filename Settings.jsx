@@ -13,6 +13,7 @@ module.exports = class Settings extends React.Component {
     var ThemeCards = [];
     powercord.styleManager.themes.forEach((theme) => {
       if(theme.entityID === "pc-moduleManager") return;
+      if(theme.manifest.author === "Unknown" && theme.manifest.license === "Unknown") return;
       ThemeCards.push(<Card theme={theme} style={{display: "block"}}/>)
     })
     return (  <div>
